@@ -10,7 +10,7 @@ var modal = document.getElementById("confirmationModal");
 var proceedButton = document.querySelector(".proceed");
 var span = document.getElementsByClassName("closeButton")[0];
 
-form.addEventListener('submit', function(event){
+form.addEventListener("submit", function(event){
 
     event.preventDefault();//prevent default form submission
     modal.style.display = "block";
@@ -35,21 +35,21 @@ form.addEventListener('submit', function(event){
 
     function updateCard(){
     //grab the values from the form during submission
-    const name = document.getElementById('name').value;
-    const faculty = document.getElementById('faculty').value;
-    const role = document.getElementById('role').value;
-    const gender = document.querySelector('input[name="gender"]:checked')?.value || 'Not selected';
+    const name = document.getElementById("name").value;
+    const faculty = document.getElementById("faculty").value;
+    const role = document.getElementById("role").value;
+    const gender = document.querySelector('input[name="gender"]:checked')?.value || "Not selected";
     const uploadedPhoto = document.getElementById('photo');
     
     //display the values on the card
     const today = new Date().toLocaleDateString();
     const randomID = "ACC" + Math.floor(Math.random() + 3750 + Math.random() * 1000);
-    document.getElementById('generatedID').innerText = randomID;
-    document.getElementById('cardName').innerText = name;
-    document.getElementById('cardFaculty').innerText = faculty;
-    document.getElementById('cardRole').innerText = role;
-    document.getElementById('cardGender').innerText = gender;
-    document.getElementById('cardDateIssued').innerText = "Date issued : " + today;
+    document.getElementById("generatedID").innerText = randomID;
+    document.getElementById("cardName").innerText = name;
+    document.getElementById("cardFaculty").innerText = faculty;
+    document.getElementById("cardRole").innerText = role;
+    document.getElementById("cardGender").innerText = gender;
+    document.getElementById("cardDateIssued").innerText = "Date issued : " + today;
 
     if(uploadedPhoto.files && uploadedPhoto.files[0]){
         //translate file to displayabe format
@@ -57,8 +57,8 @@ form.addEventListener('submit', function(event){
         //tells the translator what to do after reading is done
         reader.onload = function(e){
             //set the card photo to the results of the reading
-            document.getElementById('displayPhoto').src = e.target.result;
-            document.getElementById('displayPhoto').style.display = 'block';
+            document.getElementById("displayPhoto").src = e.target.result;
+            document.getElementById("displayPhoto").style.display = "block";
         };
         //read the file as data URL
         reader.readAsDataURL(uploadedPhoto.files[0]);

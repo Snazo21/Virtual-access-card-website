@@ -111,7 +111,7 @@ i{
 .closeButton{
     float : right;
     font-weight : bold;
-
+    cursor : pointer;
 }
 .close:hover,
 .close:focus{
