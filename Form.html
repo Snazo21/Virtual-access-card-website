@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!--head-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,41 +16,50 @@
     <script src="script.js" defer></script>
 </head>
 
+<!--header-->
 <header>
     <h1>Virtual access card form - students & staff</h1>
 </header>
 
+<!--body-->
 <body>
     <section class = 'form'>
         <form id = 'form'action="/submit" method="post">
             <p>* All fields are mandatory</p>
             
             <!--Input fields -->
+            <!--name&surname field -->
             <h3>Full names and surname :<h3>
             <input type="text" id="name" name="name" required >
 
+            <!--faculty field -->
             <h3>Faculty :<h3>
             <input type="text" id="faculty" name="faculty" required >
 
+            <!--role field -->
             <h3>Select your role :<h3>
             <select id = "role" name = "role" size="1" required>
                 <option value = "Student">Student</option>
                 <option value = "Staff">Staff</option>
             </select>
 
+            <!--role field -->
             <h3>Gender : </h3>
             <label for = "gender">Female</label><br>
             <input type = "radio" id = "female" name = "gender" value = "Female" required><br>
             <label for = "gender">Male</label><br>
             <input type = "radio" id = "male" name = "gender" value = "Male" required>
 
+            <!--photo field -->
             <h3>Upload your photo : </h3></label>
             <input type="file" id="photo" name="photo" accept="image/*" required><br><br><br>
 
+            <!--accept terms field -->
             <input type = "checkbox" id = "terms" name = "terms" required>
             <label for = "terms"> I consent to the processing of my data</label><br><br><br>
             <button type="submit" id = "submit">Generate</button>
 
+            <!--confirmation modal field -->
             <div id = "confirmationModal">
                 <div class = "modalContent">
                     <span class = "closeButton" >&times;</span>
@@ -74,8 +85,7 @@
                 <p><span id = "cardRole">Role : </span></p>
                 <p><span id = "cardGender">Gender : </span></p>
                 <p><span id = "cardDateIssued">Date issued :</span></p>
-                <svg id = "barcode">
-                </svg>
+                <svg id = "barcode"></svg>
         </div>
     </article>
 </body>
